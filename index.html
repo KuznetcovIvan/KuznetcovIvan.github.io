@@ -1,185 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Projects</title>
-
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    /* Общие стили */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text-color);
-      background-color: var(--bg-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      border-bottom: 1px solid var(--border-color);
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    header h1 {
-      font-weight: 600;
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
-    }
-
-    header p {
-      color: var(--text-muted);
-      font-size: 1.125rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgb(27 31 35 / 0.04);
-      transition: box-shadow 0.2s ease, border-color 0.3s ease, background-color 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 4px 12px rgb(27 31 35 / 0.15);
-      border-color: #2188ff;
-    }
-
-    .card-img-top {
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-      object-fit: cover;
-      height: 180px;
-      width: 100%;
-    }
-
-    .card-title {
-      color: #0969da;
-      font-weight: 600;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-text {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn-primary {
-      background-color: #238636;
-      border-color: #238636;
-      font-weight: 600;
-      border-radius: 6px;
-      padding: 0.375rem 0.75rem;
-      font-size: 1rem;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: #2ea043;
-      border-color: #2ea043;
-    }
-
-    footer {
-      padding: 2rem 1rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      transition: color 0.3s ease;
-    }
-
-    /* Светлая тема (по умолчанию) */
-    :root {
-      --bg-color: #f6f8fa;
-      --header-bg: white;
-      --card-bg: white;
-      --border-color: #d0d7de;
-      --text-color: #24292e;
-      --text-muted: #57606a;
-    }
-
-    /* Тёмная тема */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #0d1117;
-        --header-bg: #161b22;
-        --card-bg: #161b22;
-        --border-color: #30363d;
-        --text-color: #c9d1d9;
-        --text-muted: #8b949e;
-      }
-
-      .card-title {
-        color: #58a6ff; /* голубой для заголовков карточек */
-      }
-
-      .btn-primary {
-        background-color: #238636;
-        border-color: #238636;
-      }
-      .btn-primary:hover {
-        background-color: #2ea043;
-        border-color: #2ea043;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Проекты</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <header class="container">
-    <h1>My Projects</h1>
-    <p>A curated selection of projects I've worked on.</p>
-  </header>
-
-  <main class="container mb-5">
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/400x180?text=Project+1" alt="Project 1" class="card-img-top" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Project One</h5>
-            <p class="card-text flex-grow-1">A backend API built with Django REST Framework. Implements authentication and complex business logic.</p>
-            <a href="https://github.com/kuznetcovivan/project-one" target="_blank" class="btn btn-primary mt-auto">View on GitHub</a>
-          </div>
+    <header>
+        <div class="logo">
+            <svg height="24" viewBox="0 0 16 16" width="24">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" fill="currentColor"></path>
+            </svg>
+            <span>Мои проекты</span>
         </div>
-      </div>
+        <button class="theme-toggle" id="theme-toggle" title="Переключить тему">
+            <svg id="moon-icon" viewBox="0 0 16 16" width="16" height="16" style="display: inline;">
+                <path fill-rule="evenodd" d="M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z" fill="currentColor"></path>
+            </svg>
+            <svg id="sun-icon" viewBox="0 0 16 16" width="16" height="16" style="display: none;">
+                <path fill-rule="evenodd" d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.061 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" fill="currentColor"></path>
+            </svg>
+        </button>
+    </header>
 
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/400x180?text=Project+2" alt="Project 2" class="card-img-top" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Project Two</h5>
-            <p class="card-text flex-grow-1">Flask web app with user authentication and PostgreSQL integration, dockerized for easy deployment.</p>
-            <a href="https://github.com/kuznetcovivan/project-two" target="_blank" class="btn btn-primary mt-auto">View on GitHub</a>
-          </div>
+    <div class="container">       
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project1'">
+                <h3 class="project-title">Веб-приложение TodoList</h3>
+                <p class="project-description">Современное приложение для управления задачами с поддержкой drag-and-drop и фильтрацией.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Redux</span>
+                    <span class="tech-tag">SCSS</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project2'">
+                <h3 class="project-title">E-commerce API</h3>
+                <p class="project-description">Серверная часть интернет-магазина с аутентификацией, управлением товарами и заказами.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project3'">
+                <h3 class="project-title">Приложение прогноза погоды</h3>
+                <p class="project-description">Мобильное приложение с детальным прогнозом погоды и интерактивными картами.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Redux Toolkit</span>
+                    <span class="tech-tag">Weather API</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project4'">
+                <h3 class="project-title">Чат-бот с ИИ</h3>
+                <p class="project-description">Умный чат-бот с использованием обработки естественного языка для поддержки клиентов.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project5'">
+                <h3 class="project-title">Социальная сеть разработчиков</h3>
+                <p class="project-description">Платформа для взаимодействия разработчиков, обмена проектами и опытом.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Vuex</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='https://github.com/username/project6'">
+                <h3 class="project-title">Админ-панель для CMS</h3>
+                <p class="project-description">Удобная административная панель для управления контентом с аналитикой и ролевым доступом.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">NgRx</span>
+                    <span class="tech-tag">Bootstrap</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="https://via.placeholder.com/400x180?text=Project+3" alt="Project 3" class="card-img-top" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Project Three</h5>
-            <p class="card-text flex-grow-1">FastAPI microservice with async support and automated tests using pytest.</p>
-            <a href="https://github.com/kuznetcovivan/project-three" target="_blank" class="btn btn-primary mt-auto">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </main>
 
-  <footer>
-    <p>© 2025 Иван Михайлович | Backend Python Developer</p>
-  </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
