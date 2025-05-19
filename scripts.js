@@ -28,10 +28,75 @@ function toggleTheme() {
     setTheme(newTheme);
 }
 
-// Инициализация темы при загрузке страницы
+// Функция для создания карточки проекта
+function createProjectCard(project) {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.onclick = function() {
+        window.open(project.link, '_blank');
+    };
+
+    const title = document.createElement('h3');
+    title.className = 'project-title';
+    title.textContent = project.title;
+
+    const description = document.createElement('p');
+    description.className = 'project-description';
+    description.textContent = project.description;
+
+    const techStack = document.createElement('div');
+    techStack.className = 'tech-stack';
+
+    project.techStack.forEach(tech => {
+        const tag = document.createElement('span');
+        tag.className = 'tech-tag';
+        tag.textContent = tech;
+        techStack.appendChild(tag);
+    });
+
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(techStack);
+
+    return card;
+}
+
+// Функция для загрузки проектов из JSON файла
+function loadProjects() {
+    fetch('projects.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Не удалось загрузить данные проектов');
+            }
+            return response.json();
+        })
+        .then(projects => {
+            const projectsGrid = document.querySelector('.projects-grid');
+            projectsGrid.innerHTML = ''; // Очищаем сетку перед добавлением новых карточек
+            
+            projects.forEach(project => {
+                const card = createProjectCard(project);
+                projectsGrid.appendChild(card);
+            });
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке проектов:', error);
+            document.querySelector('.projects-grid').innerHTML = `
+                <div class="error-message">
+                    <p>Не удалось загрузить проекты. Пожалуйста, попробуйте позже.</p>
+                </div>
+            `;
+        });
+}
+
+// Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
+    // Устанавливаем тему
     setTheme(getPreferredTheme());
     
     // Обработчик клика на кнопке переключения темы
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    
+    // Загружаем проекты
+    loadProjects();
 });

@@ -5,13 +5,13 @@
     --bg-secondary: #f6f8fa;
     --border-color: #d0d7de;
     --text-primary: #24292f;
-    --text-secondary: #57606a;
+    --text-secondary: #24292f;
     --link-color: #0969da;
     --hover-color: #f3f4f6;
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
     --header-bg: #f6f8fa;
-    --tag-bg: #ddf4ff;
-    --tag-text: #0969da;
+    --tag-bg: #1d4ed8;
+    --tag-text: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -19,14 +19,14 @@
     --bg-primary: #0d1117;
     --bg-secondary: #161b22;
     --border-color: #30363d;
-    --text-primary: #c9d1d9;
-    --text-secondary: #8b949e;
+    --text-primary: #e7ebf0;
+    --text-secondary: #e7ebf0;
     --link-color: #58a6ff;
     --hover-color: #21262d;
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
     --header-bg: #161b22;
     --tag-bg: #1d4ed8;
-    --tag-text: #c9d1d9;
+    --tag-text: #ffffff;
 }
 
 /* Общие стили */
@@ -145,6 +145,25 @@ h1 {
     border-radius: 2rem;
     font-size: 0.75rem;
     font-weight: 500;
+}
+
+/* Дополнительные стили для индикаторов загрузки и ошибок */
+.loading-indicator, 
+.error-message {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.loading-indicator {
+    color: var(--text-secondary);
+}
+
+.error-message {
+    color: #cf222e;
 }
 
 /* Адаптивный дизайн */
