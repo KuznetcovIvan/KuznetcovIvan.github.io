@@ -78,6 +78,47 @@ header {
     background-color: var(--hover-color);
 }
 
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.theme-toggle,
+.lang-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.lang-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.lang-toggle:hover {
+    background-color: var(--hover-color);
+}
+
 /* Контейнер страницы */
 .container {
     max-width: 1600px;

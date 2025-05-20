@@ -28,6 +28,38 @@ function toggleTheme() {
     setTheme(newTheme);
 }
 
+// Функция для определения языка
+function getPreferredLanguage() {
+    if (localStorage.getItem('language')) {
+        return localStorage.getItem('language');
+    }
+    const browserLang = navigator.language || navigator.languages[0];
+    return browserLang.startsWith('ru') ? 'ru' : 'en';
+}
+
+// Функция для установки языка
+function setLanguage(lang) {
+    localStorage.setItem('language', lang);
+    
+    // Обновляем заголовок
+    const headerTitle = document.getElementById('header-title');
+    headerTitle.textContent = lang === 'ru' ? 'Мои проекты' : 'My projects';
+    
+    // Обновляем кнопку переключения языка
+    const langButtonText = document.getElementById('lang-button-text');
+    langButtonText.textContent = lang === 'ru' ? 'Translate' : 'Перевести';
+    
+    // Загружаем проекты на выбранном языке
+    loadProjects(lang);
+}
+
+// Функция переключения языка
+function toggleLanguage() {
+    const currentLang = localStorage.getItem('language') || 'ru';
+    const newLang = currentLang === 'ru' ? 'en' : 'ru';
+    setLanguage(newLang);
+}
+
 // Функция для создания карточки проекта
 function createProjectCard(project) {
     const card = document.createElement('div');
@@ -62,17 +94,19 @@ function createProjectCard(project) {
 }
 
 // Функция для загрузки проектов из JSON файла
-function loadProjects() {
-    fetch('projects.json')
+function loadProjects(lang = 'ru') {
+    const file = lang === 'ru' ? 'projects.json' : 'projects_en.json';
+    
+    fetch(file)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Не удалось загрузить данные проектов');
+                throw new Error(lang === 'ru' ? 'Не удалось загрузить данные проектов' : 'Failed to load project data');
             }
             return response.json();
         })
         .then(projects => {
             const projectsGrid = document.querySelector('.projects-grid');
-            projectsGrid.innerHTML = ''; // Очищаем сетку перед добавлением новых карточек
+            projectsGrid.innerHTML = '';
             
             projects.forEach(project => {
                 const card = createProjectCard(project);
@@ -80,10 +114,10 @@ function loadProjects() {
             });
         })
         .catch(error => {
-            console.error('Ошибка при загрузке проектов:', error);
+            console.error(lang === 'ru' ? 'Ошибка при загрузке проектов:' : 'Error loading projects:', error);
             document.querySelector('.projects-grid').innerHTML = `
                 <div class="error-message">
-                    <p>Не удалось загрузить проекты. Пожалуйста, попробуйте позже.</p>
+                    <p>${lang === 'ru' ? 'Не удалось загрузить проекты. Пожалуйста, попробуйте позже.' : 'Failed to load projects. Please try again later.'}</p>
                 </div>
             `;
         });
@@ -94,9 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Устанавливаем тему
     setTheme(getPreferredTheme());
     
+    // Устанавливаем язык
+    setLanguage(getPreferredLanguage());
+    
     // Обработчик клика на кнопке переключения темы
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     
-    // Загружаем проекты
-    loadProjects();
+    // Обработчик клика на кнопке переключения языка
+    document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
 });
