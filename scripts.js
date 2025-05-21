@@ -43,7 +43,7 @@ function setLanguage(lang) {
     document.getElementById('lang-button-text').textContent = lang === 'ru' ? 'Translate' : 'Перевести';
     
     // Обновляем текст кнопки профиля
-    document.getElementById('profile-button-text').textContent = lang === 'ru' ? 'В профиль GitHub' : 'To GitHub Profile';
+    document.getElementById('profile-button-text').textContent = lang === 'ru' ? 'В профиль GitHub' : 'To GitHub profile';
     
     // Загружаем проекты на выбранном языке
     loadProjects(lang);
