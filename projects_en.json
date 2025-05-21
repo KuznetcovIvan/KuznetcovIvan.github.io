@@ -1,0 +1,134 @@
+[
+  {
+    "title": "API web platforms for storing, creating and exchanging culinary recipes",
+    "description": "I implemented the creation and editing of recipes with invested ingredients and tags, adding to favorites and a list of purchases, subscription to authors, downloading a list of ingredients with automatic summation.The API interface supports pagination, JWT authentication and expanded data control through the admin panel.Contracted the containerization of the complete stack of the project: Bacend, Fronted, Nginx and the PostgreSQL database.I set up the Docker-images and Volume-volume for storing statics, media files and database data.He organized CI/CD through Github Actions: Assembly and Publishing images on Docker Hub, Deflowing on the server using migrations and assembling statics.Imanded notifications in Telegram on the status of a wiper.",
+    "techStack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Djoser",
+      "PostgreSQL",
+      "Gunicorn",
+      "React",
+      "Docker",
+      "Docker Compose",
+      "Nginx",
+      "GitHub Actions",
+      "Docker Hub",
+      "Telegram Bot API"
+    ],
+    "link": "https://github.com/KuznetcovIvan/foodgram"
+  },
+  {
+    "title": "Team project (3 people): API of the database of works (films, books, music) with the ability to leave reviews and ratings",
+    "description": "He performed a Timlid in the project: he coordinated the actions of the team, decomposed tasks, and was engaged in the user system.I implemented registration by email and username, authentication via JWT-token after confirming the email code, as well as the differentiation of roles: anonymous, user, moderator, administrator.",
+    "techStack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Simple JWT"
+    ],
+    "link": "https://github.com/KuznetcovIvan/api_yamdb"
+  },
+  {
+    "title": "Service for publishing personal diaries",
+    "description": "Implemented: creation, editing and removal of posts, categories, locations and comments;adding images;support for postponed publications;authorization and distinction between access rights;Pagination and filtering of published posts.I set up an admin panel for controlling.",
+    "techStack": [
+      "Python",
+      "Django",
+      "Bootstrap"
+    ],
+    "link": "https://github.com/KuznetcovIvan/django_sprint4"
+  },
+  {
+    "title": "Link reduction service",
+    "description": "Implemented: generation of unique short links from long URLs;the ability to indicate your own short identifier;automatic generation of the identifier in the absence of user;forwarding by short link to the source URL;simple web interface with a form for creating links;A full -fledged REST API for creating and obtaining links.",
+    "techStack": [
+      "Python",
+      "Flask",
+      "SQLAlchemy",
+      "Jinja2",
+      "Alembic"
+    ],
+    "link": "https://github.com/KuznetcovIvan/yacut"
+  },
+  {
+    "title": "API blog API for integration with a mobile application, chat boot and web interface",
+    "description": "Implemented the creation, editing and deleting of posts, sending comments, subscription to other users and viewing their subscriptions, receiving community information.The service supports JWT authentication, pagination and auto generation of documentation through Redoc.",
+    "techStack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Djoser"
+    ],
+    "link": "https://github.com/KuznetcovIvan/api_final_yatube"
+  },
+  {
+    "title": "Perser of documentation Python",
+    "description": "I realized the management through the arguments of the command line and logistics, the extraction of information about new possibilities in the latest versions of Python, the collection of information about versions and their statuses, downloading the archive with the Python documentation, analysis of PEP statuses.Used the libraries Redests_cache and Beautifulsoup.Later he processed the project using the SCRAPY framework.",
+    "techStack": [
+      "Python",
+      "Requests_cache",
+      "BeautifulSoup",
+      "Scrapy"
+    ],
+    "link": "https://github.com/KuznetcovIvan/scrapy_parser_pep"
+  },
+  {
+    "title": "Telegram bout to track status",
+    "description": "He developed a Telegram-boat that interviews the API service with a given frequency, checks the status and sends notifications to Telegram.Implemented the verification of environment variables, processing the API answers, logging events in Stdout and a file.API errors and undocumented statuses are processed with sending notifications to Telegram.",
+    "techStack": [
+      "Python",
+      "python-telegram-bot",
+      "requests",
+      "logging"
+    ],
+    "link": "https://github.com/KuznetcovIvan/homework_bot"
+  },
+  {
+    "title": "Bongocat interactive assistant",
+    "description": "I implemented an automatic click at a given point with a given time interval, calibrating the click position while maintaining, resistance to the window movement (binding to the working window), starting through the command line arguments, logging, optional sound support, changing clicks by memory signs.",
+    "techStack": [
+      "Python",
+      "Pyautogui",
+      "Pymem",
+      "Pynput",
+      "Pywinauto"
+    ],
+    "link": "https://github.com/KuznetcovIvan/bongo_bot"
+  },
+  {
+    "title": "Testing Django projects Yanote and Yanews",
+    "description": "I assembled a collection of tests on Unittest and Pytest to check the key scenarios of the Yanote and Yanews projects.In Yanote, I implemented: Tests for the availability of routes for anonymous and authorized users;checking the transfer of objects to templates and context;The logic of creating, editing and removing notes with verification of authorship and generation Slug.In Yanews - tests for the availability of pages, displaying news and comments, sorting and restrictions on quantity, as well as validation of prohibited words in the comments.",
+    "techStack": [
+      "Python",
+      "Unittest",
+      "Pytest",
+      "Django",
+      "Pytest-django"
+    ],
+    "link": "https://github.com/KuznetcovIvan/django_testing"
+  },
+  {
+    "title": "Web page portfolio",
+    "description": "He developed an adaptive web page to demonstrate projects.I realized the switching of topics (light/dark), support for multi -sized (Russian/English) with automatic translation via Googletrans using Github Actions, downloading projects from JSON, dynamic creation of projects with clickable links to GITHUB.",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "Googletrans",
+      "GitHub Actions"
+    ],
+    "link": "https://github.com/KuznetcovIvan/KuznetcovIvan.github.io"
+  },
+  {
+    "title": "Snake",
+    "description": "I implemented the classic game 'snake' using Pygame and OOP.Added mechanics: ordinary apples increase the length, the bad decrease, poisoned reset the game.Speed ​​control through Shift/Ctrl, through field, discharge in a collision with you.",
+    "techStack": [
+      "Python",
+      "Pygame"
+    ],
+    "link": "https://github.com/KuznetcovIvan/the_snake"
+  }
+]
