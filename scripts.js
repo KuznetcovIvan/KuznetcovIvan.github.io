@@ -11,14 +11,9 @@ function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     
-    // Обновление иконок
-    if (theme === 'dark') {
-        document.getElementById('moon-icon').style.display = 'none';
-        document.getElementById('sun-icon').style.display = 'inline';
-    } else {
-        document.getElementById('moon-icon').style.display = 'inline';
-        document.getElementById('sun-icon').style.display = 'none';
-    }
+    // Обновление иконок для шапки
+    document.getElementById('moon-icon').style.display = theme === 'dark' ? 'none' : 'inline';
+    document.getElementById('sun-icon').style.display = theme === 'dark' ? 'inline' : 'none';
 }
 
 // Функция переключения темы
@@ -42,12 +37,13 @@ function setLanguage(lang) {
     localStorage.setItem('language', lang);
     
     // Обновляем заголовок
-    const headerTitle = document.getElementById('header-title');
-    headerTitle.textContent = lang === 'ru' ? 'Мои проекты' : 'My projects';
+    document.getElementById('header-title').textContent = lang === 'ru' ? 'Мои проекты' : 'My projects';
     
     // Обновляем кнопку переключения языка
-    const langButtonText = document.getElementById('lang-button-text');
-    langButtonText.textContent = lang === 'ru' ? 'Translate' : 'Перевести';
+    document.getElementById('lang-button-text').textContent = lang === 'ru' ? 'Translate' : 'Перевести';
+    
+    // Обновляем текст кнопки профиля
+    document.getElementById('profile-button-text').textContent = lang === 'ru' ? 'В профиль GitHub' : 'To GitHub Profile';
     
     // Загружаем проекты на выбранном языке
     loadProjects(lang);
@@ -131,9 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Устанавливаем язык
     setLanguage(getPreferredLanguage());
     
-    // Обработчик клика на кнопке переключения темы
+    // Обработчик клика для переключения темы
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     
-    // Обработчик клика на кнопке переключения языка
+    // Обработчик клика для переключения языка
     document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
 });
