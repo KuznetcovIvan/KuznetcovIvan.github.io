@@ -41,6 +41,19 @@
     "link": "https://github.com/KuznetcovIvan/django_sprint4"
   },
   {
+    "title": "API service on Fastapi for conducting charitable projects with donations distribution.",
+    "description": "Implemented: registration and authentication of users with Fastapi Users;Crud logic for projects and donations;automatic distribution of donations on projects on the principle of FIFO;Validation of business rules (you can not delete a project with investments, you cannot underestimate the required amount, etc.);delimitation of access rights;input validation;setting Alembic, asynchronous SQLALCHEMY ORM;Auto creation of a super -user.",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy (async)",
+      "Alembic",
+      "FastAPI Users",
+      "Pydantic"
+    ],
+    "link": "https://github.com/KuznetcovIvan/cat_charity_fund"
+  },
+  {
     "title": "Link reduction service",
     "description": "Implemented: generation of unique short links from long URLs;the ability to indicate your own short identifier;automatic generation of the identifier in the absence of user;forwarding by short link to the source URL;simple web interface with a form for creating links;A full -fledged REST API for creating and obtaining links.",
     "techStack": [
@@ -72,7 +85,7 @@
       "BeautifulSoup",
       "Scrapy"
     ],
-    "link": "https://github.com/KuznetcovIvan/scrapy_parser_pep"
+    "link": "https://github.com/KuznetcovIvan/bs4_parser_pep"
   },
   {
     "title": "Telegram bout to track status",
