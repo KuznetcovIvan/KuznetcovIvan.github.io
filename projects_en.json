@@ -41,6 +41,37 @@
     "link": "https://github.com/KuznetcovIvan/django_sprint4"
   },
   {
+    "title": "API service on Fastapi for conducting charitable projects with donations distribution.",
+    "description": "Implemented: registration and authentication of users with Fastapi Users;Crud logic for projects and donations;automatic distribution of donations on projects on the principle of FIFO;Validation of business rules (you can not delete a project with investments, you cannot underestimate the required amount, etc.);delimitation of access rights;input validation;setting Alembic, asynchronous SQLALCHEMY ORM;Auto creation of a super -user;Formation of the report on Google Sheets on closed projects sorted by the speed of fundraising.This is an extended version of the service: https://github.com/kuznetcovivan/cat_charmite_fund",
+    "techStack": [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy (async)",
+      "Alembic",
+      "FastAPI Users",
+      "Pydantic",
+      "Aiogoogle",
+      "Google Cloud"
+    ],
+    "link": "https://github.com/KuznetcovIvan/QRkot_spreadsheets"
+  },
+  {
+    "title": "DJango API service for user management and their orders with support for filtering, searching and delimitation of access.",
+    "description": "Implemented: registration and JWT authentication of users;Crud logic for users and orders;automatic calculation of age;filtering and searching for the fields of users and orders;delimitation of access rights (the user sees only his orders, admin - all);documentation via DRF spectacular;administrative panel with custom filters;Support PostgreSQL and SQLite;the possibility of launching in doCker and locally;Loading test data.",
+    "techStack": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "SimpleJWT",
+      "DRF Spectacular",
+      "PostgreSQL",
+      "SQLite",
+      "Docker",
+      "Docker Compose"
+    ],
+    "link": "https://github.com/KuznetcovIvan/user_order_api"
+  },
+  {
     "title": "Link reduction service",
     "description": "Implemented: generation of unique short links from long URLs;the ability to indicate your own short identifier;automatic generation of the identifier in the absence of user;forwarding by short link to the source URL;simple web interface with a form for creating links;A full -fledged REST API for creating and obtaining links.",
     "techStack": [
@@ -51,6 +82,19 @@
       "Alembic"
     ],
     "link": "https://github.com/KuznetcovIvan/yacut"
+  },
+  {
+    "title": "CLI-script for processing CSV files with support for filtering and aggregation",
+    "description": "Implemented: filtering of lines according to the conditions (`>`, `<`, `=`), aggregation on numerical columns (`AVG`,` MIN`, `MAX`), processing of data validation.The project was structured with the configuration of arguments, constants and custom exceptions.Covered the main scenarios of unit tests through Pytest and Pytest-Cov.",
+    "techStack": [
+      "Python",
+      "argparse",
+      "csv",
+      "tabulate",
+      "pytest",
+      "pytest-cov"
+    ],
+    "link": "https://github.com/KuznetcovIvan/csv_file_processor"
   },
   {
     "title": "API blog API for integration with a mobile application, chat boot and web interface",
@@ -72,7 +116,7 @@
       "BeautifulSoup",
       "Scrapy"
     ],
-    "link": "https://github.com/KuznetcovIvan/scrapy_parser_pep"
+    "link": "https://github.com/KuznetcovIvan/bs4_parser_pep"
   },
   {
     "title": "Telegram bout to track status",
